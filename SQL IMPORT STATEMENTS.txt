@@ -1,0 +1,271 @@
+DROP TABLE IF EXISTS Customer;
+DROP TABLE IF EXISTS Management;
+DROP TABLE IF EXISTS MenuItems;
+DROP TABLE IF EXISTS Reservation;
+DROP TABLE IF EXISTS Sitting;
+DROP TABLE IF EXISTS TableOrder;
+DROP TABLE IF EXISTS "Table";
+DROP TABLE IF EXISTS TableReservation;
+DROP TABLE IF EXISTS Category;
+
+CREATE TABLE Customer 
+(
+    CustomerID	INTEGER  NOT NULL PRIMARY KEY,
+    FirstName	nvarchar(64),
+    LastName	nvarchar(64),
+    EmailAddress	nvarchar(320)
+);
+
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('1', 'Kai', 'Massiah', 'km12@yahoo.com');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('2', 'Aaron', 'Smith', 'aaron12@gmail.co.uk');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('3', 'Ed', 'Matthews', 'edmatthews@hotmail.com');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('4', 'Jack', 'Brown', 'jackbrown001@outlook.com');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('5', 'Harry', 'King', 'harryking01@gmail.co.uk');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('6', 'Fiona', 'Steward', 'fiona0810@yahoo.com');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('7', 'Jake', 'Brown', 'jakeb12@gmail.com');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('8', 'Eddie', 'Brighton', 'eddie1234@outlook.com');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('9', 'George', 'Fox', 'georgefox@hotmail.co.uk');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('10', 'Rafael', 'Hernandez', 'raffy21@gmail.com');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('11', 'Joseph', 'Grill', 'joegrill@outlook.com');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('12', 'Johnson', 'Simmons', 'johnsonsimm@aol.com');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('13', 'Axel', 'Myers', 'axlmyers@aol.co.uk');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('14', 'Connor', 'Streets', 'connor123@gmail.com');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('15', 'Mateo', 'Suarez', 'mateos12@outlook.co.uk');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('16', 'Julius', 'Duncan', 'jd08@aol.com');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('17', 'Draymond', 'Green', 'draymondgreen@protonmail.com');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('18', 'Alex', 'Caruso', 'alexcaruso@gmail.com');
+INSERT INTO Customer (CustomerID, FirstName, LastName, EmailAddress) VALUES ('19', 'Gary', 'James', 'garyjames@gmail.com');
+
+CREATE TABLE Management(
+	AccountID INT NOT NULL PRIMARY KEY,
+	Name VARCHAR(64),
+	Password VARCHAR(6) NOT NULL,
+	Manager TINYINT
+);
+
+INSERT INTO Management (AccountID, Name, Password, Manager) VALUES ('1', 'Jason', '123', '1');
+INSERT INTO Management (AccountID, Name, Password, Manager) VALUES ('2', 'Wilfrid', '321', '0');
+
+CREATE TABLE MenuItems 
+(
+    OrderID	INTEGER  NOT NULL PRIMARY KEY,
+    CategoryID	INTEGER  NOT NULL,
+    ItemName	varchar(64),
+    Price	float
+);
+
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('1', '1', 'Calamari', '6.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('2', '1', 'Lentil Soup', '5.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('3', '1', 'Roasted Stuffed Mushrooms', '7.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('4', '1', 'Sweet Fried Saganaki', '8.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('5', '1', 'Onion Rings', '5.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('6', '1', 'Olives', '5.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('7', '1', 'Buttered Tiger Prawns', '8.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('8', '1', 'Hummus', '4.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('9', '2', 'Lasagna', '11.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('10', '2', 'Slow-Cooked Beef Stew', '13.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('11', '2', 'King Prawns', '14.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('12', '2', 'BBQ Ribs', '13.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('13', '2', 'Chicken Wings', '11.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('14', '2', 'Chicken Nuggets', '9.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('15', '2', 'Beef Burger', '11.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('16', '2', 'Lamb Cutlet', '14.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('17', '2', 'Grilled Seabass', '15.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('18', '3', 'Strawberry Ice Cream', '3.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('19', '3', 'Chocolate Ice Cream', '3.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('20', '3', 'Vanilla Ice Cream', '3.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('21', '3', 'Apple Pie', '3.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('22', '3', 'Chocolate Fudge Cake', '6.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('23', '3', 'Mango Cheesecake', '6.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('24', '4', 'Coke', '2.50');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('25', '4', 'Diet Coke', '2.50');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('26', '4', 'Lemonade', '2.50');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('27', '4', 'Orange Juice', '1.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('28', '4', 'Apple Juice', '1.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('29', '4', 'Chocolate Milkshake', '2.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('30', '4', 'Banana Milkshake', '2.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('31', '4', 'Strawberry Milkshake', '2.99');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('32', '4', 'Large Still Water', '2.5');
+INSERT INTO MenuItems (OrderID, CategoryID, ItemName, Price) VALUES ('33', '0', 'Small Still Water', '1.99');
+
+CREATE TABLE Reservation(
+   ReservationID  INTEGER  NOT NULL PRIMARY KEY 
+  ,CustomerID     INTEGER  NOT NULL
+  ,AccountID      INTEGER  NOT NULL
+  ,Date           DATE  NOT NULL
+  ,Time           TIME(0)  NOT NULL
+  ,NumberofPeople INTEGER  NOT NULL
+);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (1,1,1,'09/12/2022','14:00:00',4);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (2,2,1,'12/14/2022','13:00:00',12);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (3,3,1,'12/10/2022','12:30:00',6);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (4,4,1,'12/01/2022','13:30:00',4);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (5,5,1,'12/07/2022','14:30:00',12);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (6,6,1,'12/07/2022','13:00:00',2);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (7,7,1,'12/09/2022','14:30:00',3);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (8,8,1,'12/05/2022','15:00:00',5);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (9,9,1,'12/06/2022','17:00:00',8);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (10,10,1,'12/08/2022','16:00:00',5);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (11,11,1,'12/11/2022','16:00:00',4);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (12,12,1,'12/22/2022','16:30:00',7);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (13,13,1,'12/12/2022','17:00:00',16);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (14,14,1,'12/13/2022','16:00:00',5);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (15,15,1,'12/15/2022','17:00:00',4);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (16,16,1,'12/16/2022','14:00:00',6);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (17,17,1,'12/17/2022','14:00:00',7);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (18,18,1,'12/02/2022','13:30:00',4);
+INSERT INTO Reservation(ReservationID,CustomerID,AccountID,Date,Time,NumberofPeople) VALUES (19,19,1,'12/03/2022','13:30:00',10);
+
+CREATE TABLE Sitting(
+   SittingID INTEGER  NOT NULL PRIMARY KEY 
+  ,Active    VARCHAR(5) NOT NULL
+);
+INSERT INTO Sitting(SittingID,Active) VALUES (1,'TRUE');
+INSERT INTO Sitting(SittingID,Active) VALUES (2,'TRUE');
+INSERT INTO Sitting(SittingID,Active) VALUES (3,'TRUE');
+INSERT INTO Sitting(SittingID,Active) VALUES (4,'FALSE');
+INSERT INTO Sitting(SittingID,Active) VALUES (5,'TRUE');
+INSERT INTO Sitting(SittingID,Active) VALUES (6,'TRUE');
+INSERT INTO Sitting(SittingID,Active) VALUES (7,'TRUE');
+INSERT INTO Sitting(SittingID,Active) VALUES (8,'TRUE');
+INSERT INTO Sitting(SittingID,Active) VALUES (9,'TRUE');
+INSERT INTO Sitting(SittingID,Active) VALUES (10,'TRUE');
+INSERT INTO Sitting(SittingID,Active) VALUES (11,'TRUE');
+INSERT INTO Sitting(SittingID,Active) VALUES (12,'TRUE');
+INSERT INTO Sitting(SittingID,Active) VALUES (13,'TRUE');
+
+CREATE TABLE TableOrder(
+   TableOrderID INTEGER  NOT NULL PRIMARY KEY 
+  ,TableID      INTEGER  NOT NULL
+  ,OrderID      INTEGER  NOT NULL
+  ,SittingID    INTEGER  NOT NULL
+);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (1,3,1,2);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (2,3,5,2);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (3,3,2,2);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (4,3,13,2);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (5,3,14,2);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (6,3,15,2);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (7,3,22,2);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (8,3,23,2);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (9,9,5,3);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (10,9,5,3);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (11,9,11,3);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (12,9,12,3);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (13,9,22,3);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (14,9,32,3);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (15,10,5,4);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (16,10,5,4);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (17,10,3,4);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (18,10,9,4);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (19,10,9,4);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (20,10,22,4);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (21,2,5,5);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (22,2,6,5);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (23,2,7,5);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (24,2,9,5);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (25,2,10,5);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (26,2,22,5);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (27,10,6,6);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (28,10,6,6);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (29,10,10,6);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (30,10,9,6);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (31,10,23,6);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (32,14,5,7);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (33,14,5,7);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (34,14,8,7);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (35,14,11,7);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (36,14,11,7);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (37,15,12,8);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (38,15,12,8);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (39,15,16,8);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (40,15,32,8);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (41,15,32,8);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (42,8,1,9);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (43,8,1,9);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (44,8,2,9);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (45,8,2,9);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (46,8,11,9);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (47,8,11,9);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (48,8,16,9);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (49,8,15,9);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (50,11,7,10);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (51,11,6,10);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (52,11,17,10);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (53,11,13,10);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (54,11,22,10);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (55,11,23,10);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (56,11,24,10);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (57,4,1,11);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (58,4,1,11);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (59,4,2,11);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (60,4,17,11);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (61,4,32,11);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (62,7,6,12);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (63,7,5,12);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (64,12,5,13);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (65,12,5,13);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (66,12,14,13);
+INSERT INTO TableOrder(TableOrderID,TableID,OrderID,SittingID) VALUES (67,12,17,13);
+
+CREATE TABLE TableReservation(
+   ReservationID INTEGER  NOT NULL 
+  ,TableID       INTEGER  NOT NULL
+);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (1,3);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (2,10);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (2,11);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (2,13);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (3,13);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (4,7);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (5,1);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (5,3);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (5,5);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (6,10);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (7,5);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (8,5);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (9,13);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (10,5);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (11,5);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (12,13);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (13,7);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (13,10);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (13,11);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (13,13);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (14,5);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (15,3);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (16,7);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (16,10);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (17,13);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (18,5);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (19,5);
+INSERT INTO TableReservation(ReservationID,TableID) VALUES (19,7);
+
+CREATE TABLE "Table"(
+   TableID  INTEGER  NOT NULL PRIMARY KEY 
+  ,Capacity INTEGER  NOT NULL
+);
+INSERT INTO "Table"(TableID,Capacity) VALUES (1,4);
+INSERT INTO "Table"(TableID,Capacity) VALUES (2,4);
+INSERT INTO "Table"(TableID,Capacity) VALUES (3,4);
+INSERT INTO "Table"(TableID,Capacity) VALUES (4,4);
+INSERT INTO "Table"(TableID,Capacity) VALUES (5,5);
+INSERT INTO "Table"(TableID,Capacity) VALUES (6,5);
+INSERT INTO "Table"(TableID,Capacity) VALUES (7,5);
+INSERT INTO "Table"(TableID,Capacity) VALUES (8,5);
+INSERT INTO "Table"(TableID,Capacity) VALUES (9,2);
+INSERT INTO "Table"(TableID,Capacity) VALUES (10,2);
+INSERT INTO "Table"(TableID,Capacity) VALUES (11,2);
+INSERT INTO "Table"(TableID,Capacity) VALUES (12,2);
+INSERT INTO "Table"(TableID,Capacity) VALUES (13,8);
+INSERT INTO "Table"(TableID,Capacity) VALUES (14,8);
+INSERT INTO "Table"(TableID,Capacity) VALUES (15,8);
+
+CREATE TABLE Category(
+   CategoryID   INTEGER  NOT NULL PRIMARY KEY 
+  ,CategoryName VARCHAR(7) NOT NULL
+);
+INSERT INTO Category(CategoryID,CategoryName) VALUES (1,'Starter');
+INSERT INTO Category(CategoryID,CategoryName) VALUES (2,'Main');
+INSERT INTO Category(CategoryID,CategoryName) VALUES (3,'Dessert');
+INSERT INTO Category(CategoryID,CategoryName) VALUES (4,'Drink');
