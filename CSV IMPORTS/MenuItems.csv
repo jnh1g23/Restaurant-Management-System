@@ -1,0 +1,34 @@
+OrderID,CategoryID,ItemName,Price
+1,1,Calamari,6.99
+2,1,Lentil Soup,5.99
+3,1,Roasted Stuffed Mushrooms,7.99
+4,1,Sweet Fried Saganaki,8.99
+5,1,Onion Rings,5.99
+6,1,Olives,5.99
+7,1,Buttered Tiger Prawns,8.99
+8,1,Hummus,4.99
+9,2,Lasagna,11.99
+10,2,Slow-Cooked Beef Stew,13.99
+11,2,King Prawns,14.99
+12,2,BBQ Ribs,13.99
+13,2,Chicken Wings,11.99
+14,2,Chicken Nuggets,9.99
+15,2,Beef Burger,11.99
+16,2,Lamb Cutlet,14.99
+17,2,Grilled Seabass,15.99
+18,3,Strawberry Ice Cream,3.99
+19,3,Chocolate Ice Cream,3.99
+20,3,Vanilla Ice Cream,3.99
+21,3,Apple Pie,3.99
+22,3,Chocolate Fudge Cake,6.99
+23,3,Mango Cheesecake,6.99
+24,4,Coke,2.5
+25,4,Diet Coke,2.5
+26,4,Lemonade,2.5
+27,4,Orange Juice,1.99
+28,4,Apple Juice,1.99
+29,4,Chocolate Milkshake,2.99
+30,4,Banana Milkshake,2.99
+31,4,Strawberry Milkshake,2.99
+32,4,Large Still Water,2.5
+33,0,Small Still Water,1.99
