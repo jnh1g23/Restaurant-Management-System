@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="Tables">
+    <file>TableIcon2Unavailable.png</file>
+    <file>TableIcon4Unavailable.png</file>
+    <file>TableIcon5Unavailable.png</file>
+    <file>TableIcon8Unavailable.png</file>
+    <file>TableIcon2Available.png</file>
+    <file>TableIcon4Available.png</file>
+    <file>TableIcon2Selected.png</file>
+    <file>TableIcon4Selected.png</file>
+    <file>TableIcon5Available.png</file>
+    <file>TableIcon5Selected.png</file>
+    <file>TableIcon8Available.png</file>
+    <file>TableIcon8Selected.png</file>
+  </qresource>
+</RCC>

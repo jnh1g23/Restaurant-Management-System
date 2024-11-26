@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>cil-calendar-check.png</file>
+  </qresource>
+</RCC>
